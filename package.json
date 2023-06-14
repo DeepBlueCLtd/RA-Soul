@@ -4,7 +4,7 @@
   "description": "RCO client connection to a Soul backend",
   "main": "index.js",
   "scripts": {
-    "start": "soul -d ./db/chinook.db -p 7001 -r true"
+    "start": "npx soul-cli soul -d ./db/chinook.db -p 7001 -r true"
   },
   "engines": {
     "node": "18.15.0"
