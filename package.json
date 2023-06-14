@@ -4,7 +4,7 @@
   "description": "RCO client connection to a Soul backend",
   "main": "index.js",
   "scripts": {
-    "preinstall": "cd ./soul/core & npm install",
+    "preinstall": "cd ./soul/core && npm install",
     "postinstall": "cp ./db/chinook.db ./soul/core",
     "start": "cd ./soul/core && npm run dev"
   },
