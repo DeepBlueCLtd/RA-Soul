@@ -8,6 +8,9 @@
     "postinstall": "cp db/chinook.db soul/core",
     "start": "cd soul/core && npm run dev"
   },
+  "engines": {
+    "node": "18.15.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DeepBlueCLtd/RCO-Soul.git"
