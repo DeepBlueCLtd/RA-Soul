@@ -1,0 +1,26 @@
+{
+  "name": "RCO-Soul",
+  "version": "1.0.0",
+  "description": "RCO client connection to a Soul backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx soul-cli soul -d ./db/chinook.db -p $PORT -r true"
+  },
+  "engines": {
+    "node": "18.15.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeepBlueCLtd/RCO-Soul.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeepBlueCLtd/RCO-Soul/issues"
+  },
+  "homepage": "https://github.com/DeepBlueCLtd/RCO-Soul#readme",
+  "dependencies": {
+    "soul-cli": "^0.2.1"
+  }
+}
