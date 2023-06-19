@@ -4,8 +4,8 @@
   "description": "RCO client connection to a Soul backend",
   "main": "index.js",
   "scripts": {
-    "start": "npx soul-cli soul -d ./db/RCO2.sqlite -p $PORT -r true -c http://localhost:5173,http://127.0.0.1:5173",
-    "dev": "npx soul-cli soul -d ./db/RCO2.sqlite -p $PORT -c http://localhost:5173,http://127.0.0.1:5173"
+    "start": "npx soul-cli soul -d ./db/chinook.db -p $PORT -r true -c *",
+    "dev": "npx soul-cli soul -d ./db/RCO2.sqlite -p $PORT -c *"
   },
   "engines": {
     "node": "18.15.0"
