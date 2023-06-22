@@ -2,5 +2,5 @@
 
 cd client
 npm install
-npm run build
+npx vite build
 cp -R dist ../_extensions
