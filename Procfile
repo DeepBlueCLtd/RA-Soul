@@ -1,1 +1,1 @@
-web: cd test-client && npm run build && npx soul-cli soul -d ../db/chinook.db -p $PORT -c '*' -e $(process.cwd())/_extensions
+web: cd test && npm run build && cp -R dist ./_extensions && npx soul-cli soul -d ./chinook.db -p $PORT -c '*' -e $(process.cwd())/_extensions
