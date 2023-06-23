@@ -1,1 +1,1 @@
-web: npm run heroku-postbuild && npm start
+web: cd test-client && npm run build && ls
