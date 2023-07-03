@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npx soul-cli soul -d ./db/chinook.db -p $PORT -e $PWD/_extensions",
     "release": "cp -R client/dist _extensions"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "soul-cli": "^0.3.4"
+  }
 }
