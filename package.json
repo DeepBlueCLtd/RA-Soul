@@ -8,7 +8,7 @@
     "build": "vite build && cp -R dist _extensions",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "soul": "npx soul-cli soul -d ./db/chinook.db -p $PORT -e $PWD/_extensions",
+    "soul": "npx soul-cli soul -d ./db/chinook.db -p $PORT",
     "extension": "cd _extensions && npm install"
   },
   "dependencies": {
