@@ -1,1 +1,1 @@
-web: cd test-client && npm run build
+web: npm install && npm run build
