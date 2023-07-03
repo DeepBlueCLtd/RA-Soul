@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "cp -R client/dist _extensions"
   },
   "keywords": [],
   "author": "",
