@@ -1,1 +1,1 @@
-web: npm run preinstall && npm run start
+web: cd test-client && npm run build
