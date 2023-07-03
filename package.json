@@ -4,13 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "npx soul-cli soul -d ./db/chinook.db -p $PORT",
+    "start": "npx soul-cli soul -d ./db/chinook.db -p $PORT -e /app/_extensions",
     "dev": "vite",
     "build": "vite build && cp -R dist _extensions && cd _extensions && npm install",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "soul": "npx soul-cli soul -d ./db/chinook.db -p $PORT",
-    "extension": "cd _extensions && npm install"
+    "soul": "npx soul-cli soul -d ./db/chinook.db -p $PORT"
   },
   "dependencies": {
     "react": "^18.2.0",
