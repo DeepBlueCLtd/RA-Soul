@@ -7,8 +7,7 @@
     "start": "npx soul-cli soul -d ./db/chinook.db -p $PORT -e /app/_extensions",
     "build": "vite build && cp -R dist _extensions && cd _extensions && npm install",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "dev": "vite",
-    "preview": "vite preview"
+    "dev": "vite"
   },
   "dependencies": {
     "axios": "^1.2.0",
