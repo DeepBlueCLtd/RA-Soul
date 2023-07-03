@@ -1,1 +1,1 @@
-web: npm run start:soul
+web: npm run heroku-prebuild && npm run start
