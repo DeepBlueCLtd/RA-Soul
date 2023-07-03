@@ -4,12 +4,8 @@
   "description": "RCO client connection to a Soul backend",
   "main": "index.js",
   "scripts": {
-    "start": "npm run start:soul & npm run start:client",
-    "dev": "npm run dev:soul & npm run start:client",
-    "start:soul": "npx soul-cli soul -d ./db/chinook.db -p $PORT",
-    "dev:soul": "npx soul-cli soul -d ./db/chinook.db -p 9000",
-    "start:client": "cd client && npm run dev",
-    "heroku-prebuild": "cd client && npm install"
+    "start": "npx soul-cli soul -d ./db/chinook.db -p $PORT -e $PWD/_extensions",
+    "preinstall": "cd test-client && npm install && npm run build && cp -R ./dist ../_extensions"
   },
   "engines": {
     "node": "18.15.0"
