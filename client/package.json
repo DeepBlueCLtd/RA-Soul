@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "heroku-prebuild": "npm install && npm run build && cp -R dist /app/_extensions"
+    "heroku-prebuild": "npm install && npm run build"
   },
   "dependencies": {
     "express": "^4.18.2",
