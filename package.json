@@ -1,16 +1,28 @@
 {
   "name": "rco-soul",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "npx soul-cli soul -d ./db/chinook.db -p $PORT -e $PWD/_extensions",
-    "release": "cp -R client/dist _extensions"
+    "dev": "vite",
+    "build": "vite build && cp -R dist _extensions",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "soul": "npx soul-cli soul -d ./db/chinook.db -p $PORT -e $PWD/_extensions",
+    "extension": "cd _extensions && npm install"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "soul-cli": "^0.3.4"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "vite": "^4.3.9"
   }
 }

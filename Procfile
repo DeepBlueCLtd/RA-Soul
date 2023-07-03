@@ -1,2 +1,1 @@
-web: sh -c 'cd client && npm install && npm run build'
-api: cp -R client/dist _extensions && npm run start
+web: npm run install && npm run build && npm run extension && npm run soul
