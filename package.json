@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp -R dist _extensions",
+    "build": "vite build && cp -R dist _extensions && cd _extensions && npm install && npm run soul",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "soul": "npx soul-cli soul -d ./db/chinook.db -p $PORT",
