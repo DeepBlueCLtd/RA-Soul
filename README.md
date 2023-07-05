@@ -74,3 +74,10 @@ You can deploy this project to Heroku. You can use either the Heroku CLI or crea
    ```
 
    Note: make sure to replace `<your-app-name>` with the actual name of your Heroku app.
+
+7. Copy the link of the project from the Heroku dashboard and verify if it is working. You can add /api/client to the link to check the React admin client or /api/tables to check the Soul API. Here are some examples:
+
+- React admin app link: `https://<your-app-name>.herokuapp.com/api/client`
+- Soul API link: `https://<your-app-name>.herokuapp.com/api/tables`
+
+- Note: Replace <your-app-name> with the actual name of your Heroku app.
