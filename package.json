@@ -1,26 +1,31 @@
 {
-  "name": "RCO-Soul",
-  "version": "1.0.0",
-  "description": "RCO client connection to a Soul backend",
-  "main": "index.js",
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "npx soul-cli soul -d ./db/chinook.db -p $PORT -r true"
+    "start": "npx soul-cli soul -d ./db/chinook.db -p $PORT -e /app/_extensions",
+    "dev:soul": "dotenv -- cross-var soul -d ./db/chinook.db -p %PORT%",
+    "dev:client": "vite",
+    "build": "vite build && cp -R dist _extensions && cd _extensions && npm install",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },
-  "engines": {
-    "node": "18.15.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DeepBlueCLtd/RCO-Soul.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DeepBlueCLtd/RCO-Soul/issues"
-  },
-  "homepage": "https://github.com/DeepBlueCLtd/RCO-Soul#readme",
   "dependencies": {
-    "soul-cli": "^0.2.1"
+    "axios": "^1.2.0",
+    "jsdoc": "^4.0.0",
+    "query-string": "^7.1.1",
+    "react": "^18.2.0",
+    "react-admin": "^4.5.2",
+    "react-dom": "^18.2.0",
+    "soul-cli": "^0.3.4",
+    "typescript": "^4.9.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@vitejs/plugin-react": "^2.2.0",
+    "cross-var": "^1.1.0",
+    "dotenv-cli": "^7.2.1",
+    "vite": "^3.2.3"
   }
 }
