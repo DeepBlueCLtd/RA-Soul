@@ -13,21 +13,13 @@ There are two ways to run this project locally:
 
 ## 1. Running Soul and the React Admin client independently
 
-1. Install Soul on your local machine globally by running:
-
-   ```
-   npm i soul-cli -g
-   ```
-
-   NOTE: You might need admin access, so if you are on Mac or Linux, use `sudo`.
-
-2. Go to the root folder of the project and install the npm packages by running:
+1. Go to the root folder of the project and install the npm packages by running:
 
    ```
    npm install
    ```
 
-3. Copy the environment variables from the `.env.sample` file and modify the variables by running:
+2. Copy the environment variables from the `.env.sample` file and modify the variables by running:
 
    ```
    cp .env.sample .env
@@ -37,19 +29,19 @@ There are two ways to run this project locally:
    - `VITE_API_URL`: The API URL of Soul, which should be `http://localhost:<PORT>/api/tables`.
    - `EXTENSIONS`: The **absolute path** location of the `_extensions` folder
 
-4. Start the Soul server by running:
+3. Start the Soul server by running:
 
    ```
    npm run dev:soul
    ```
 
-5. Start your React-admin client in another terminal by running:
+4. Start your React-admin client in another terminal by running:
 
    ```
    npm run dev:client
    ```
 
-6. To check if the app is working, use the following URL in your browser:
+5. To check if the app is working, use the following URL in your browser:
    ```
       http://localhost:<port_of_react-admin>
    ```
