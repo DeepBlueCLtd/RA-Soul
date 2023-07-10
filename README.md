@@ -33,8 +33,8 @@ There are two ways to run this project locally:
    cp .env.sample .env
    ```
 
-   - `PORT`: the port on which the Soul server runs.
-   - `VITE_API_URL`: the API URL of Soul, which should be `http://localhost:<PORT>/api/tables`.
+   - `PORT`: The port on which the Soul server runs.
+   - `VITE_API_URL`: The API URL of Soul, which should be `http://localhost:<PORT>/api/tables`.
    - `EXTENSIONS`: The **absolute path** location of the `_extensions` folder
 
 4. Start the Soul server by running:
