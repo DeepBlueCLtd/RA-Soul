@@ -1,5 +1,5 @@
 {
-  "name": "RCO-Soul",
+  "name": "rco-soul",
   "version": "1.0.0",
   "description": "RCO client connection to a Soul backend",
   "main": "index.js",
