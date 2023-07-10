@@ -1,51 +1,71 @@
 # RCO-Soul
 
-## Description
+# Description
 
 The purpose of this project is to demonstrate how to run a React admin client using Soul as a REST API service. Soul is an open-source REST API wrapper that exposes an SQLite database to any client.
 
-## Running Soul and the React-admin app locally
+# Running the project locally
 
-1. Install Soul on your local machine globally by running:
+There are two ways to run this project locally:
 
-   ```
-   npm i soul-cli -g
-   ```
+1. Run Soul and the React Admin client independently
+2. Run the React Admin client as an extension of Soul.
 
-   NOTE: You might need admin access, so if you are on Mac or Linux, use `sudo`.
+## 1. Running Soul and the React Admin client independently
 
-2. Go to the root folder of the project and install the npm packages by running:
+1. Go to the root folder of the project and install the npm packages by running:
 
    ```
    npm install
    ```
 
-3. Copy the environment variables from the `.env.sample` file and modify the variables by running:
+2. Copy the environment variables from the `.env.sample` file and modify the variables by running:
 
    ```
    cp .env.sample .env
    ```
 
-   - `PORT`: the port on which the Soul server runs.
-   - `VITE_API_URL`: the API URL of Soul, which should be `http://localhost:<PORT>/api/tables`.
+   - `PORT`: The port on which the Soul server runs.
+   - `VITE_API_URL`: The API URL of Soul, which should be `http://localhost:<PORT>/api/tables`.
+   - `EXTENSIONS`: The **absolute path** location of the `_extensions` folder
 
-4. Start the Soul server by running:
+3. Start the Soul server by running:
 
    ```
    npm run dev:soul
    ```
 
-5. Start your React-admin client in another terminal by running:
+4. Start your React-admin client in another terminal by running:
 
    ```
    npm run dev:client
    ```
 
-## Deploying the project to Heroku
+5. To check if the app is working, use the following URL in your browser:
+   ```
+      http://localhost:<port_of_react-admin>
+   ```
+
+## 2. Running the react admin client as a soul extension
+
+1. Build the react admin client
+   ```
+     npm run build
+   ```
+2. Run the react admin app as a soul extension
+   ```
+     npm run dev:soul-client
+   ```
+3. To check if the app is working, use the following URL in your browser:
+   ```
+     http://localhost:<port>/api/client
+   ```
+
+# Deploying the project to Heroku
 
 You can deploy this project to Heroku. You can use either the Heroku CLI or create a pipeline in Heroku to automatically deploy the project when a commit is pushed to a PR.
 
-### Deploying the project using the Heroku CLI
+## Deploying the project using the Heroku CLI
 
 1. Create a new Heroku app in the Heroku dashboard.
 2. Install the Heroku CLI on your local machine.
