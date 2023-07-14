@@ -2,7 +2,7 @@
 
 # Description
 
-The purpose of this project is to demonstrate how to run a React admin client using Soul as a REST API service. Soul is an open-source REST API wrapper that exposes an SQLite database to any client.
+The purpose of this project is to demonstrate how to run a React admin client using [Soul](https://github.com/thevahidal/soul) as a REST API service. Soul is an open-source REST API wrapper that exposes an SQLite database to any client.
 
 # Running the project locally
 
