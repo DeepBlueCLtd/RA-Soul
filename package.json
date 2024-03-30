@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "npx soul-cli soul -d ./db/chinook.db -p $PORT -e /app/_extensions",
+    "start": "dotenv -- cross-var npx soul-cli soul -d ./db/chinook.db -p $PORT -e /app/_extensions",
     "dev:soul": "dotenv -- cross-var soul -c -d ./db/RCO2.sqlite -p %PORT%",
     "dev:client": "vite",
     "dev:soul-client": "dotenv -- cross-var soul -d ./db/chinook.db -p %PORT% -e %EXTENSIONS%",
