@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "npx soul-cli soul -d ./db/chinook.db -p $PORT -e /app/_extensions",
-    "dev:soul": "dotenv -- cross-var soul -d ./db/chinook.db -p %PORT% -e %EXTENSIONS%",
+    "dev:soul": "dotenv -- cross-var soul -d ./db/chinook.db -p %PORT% -e %EXTENSIONS% -c http://localhost:5173,http://127.0.0.1:5173 -a --atet=10M --rtet=30M --ts=ABCDEF --iuu=john --iup=AX34%V1!ct2",
     "dev:client": "vite",
     "dev:soul-client": "dotenv -- cross-var soul -d ./db/chinook.db -p %PORT% -e %EXTENSIONS%",
     "build": "vite build && cp -R dist _extensions",
@@ -16,9 +16,10 @@
     "jsdoc": "^4.0.0",
     "query-string": "^7.1.1",
     "react": "^18.2.0",
-    "react-admin": "^4.5.2",
+    "react-admin": "^4.16.18",
     "react-dom": "^18.2.0",
-    "soul-cli": "^0.3.4",
+    "react-router-dom": "^6.23.1",
+    "soul-cli": "^0.7.8",
     "typescript": "^4.9.3"
   },
   "devDependencies": {

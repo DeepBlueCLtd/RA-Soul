@@ -1,6 +1,8 @@
-import { Admin, Resource } from "react-admin";
+import { Admin, Resource, Menu, MenuItemLink, Layout, LayoutProps, MenuProps } from "react-admin";
 
 import { dataProvider } from "./common/dataProvider";
+import { authProvider } from "./common/authProvider";
+
 import config from "./config";
 
 import {
@@ -29,6 +31,9 @@ import {
   TrackCreate,
 } from "./components/Track";
 
+import Login from "./components/auth/Login";
+import ChangePassword from "./components/auth/ChangePassword";
+
 const pkDictionary = {
   genres: "GenreId",
   artists: "ArtistId",
@@ -43,9 +48,26 @@ const pkDictionary = {
   albums: "AlbumId",
 };
 
+const MyMenu = (props: MenuProps) => (
+  <Menu {...props}>
+    <MenuItemLink to="/genres" primaryText="Generes" />
+    <MenuItemLink to="/invoice_items" primaryText="Invoice Items" />
+    <MenuItemLink to="/tracks" primaryText="Tracks" />
+    <MenuItemLink to="/albums" primaryText="Albums" />
+    <MenuItemLink to="/change-password" primaryText="Change Password" />
+  </Menu>
+);
+
+const MyLayout = (props: LayoutProps) => <Layout {...props} menu={MyMenu} />;
+
 function App() {
   return (
-    <Admin dataProvider={dataProvider(pkDictionary, config.apiUrl)}>
+    <Admin
+      layout={MyLayout}
+      dataProvider={dataProvider(pkDictionary, config.apiUrl)}
+      authProvider={authProvider(config.apiUrl)}
+      loginPage={Login}
+    >
       <Resource
         name="genres"
         list={GenreList}
@@ -77,6 +99,8 @@ function App() {
         edit={AlbumEdit}
         create={AlbumCreate}
       />
+
+      <Resource name="change-password" list={ChangePassword} />
     </Admin>
   );
 }
