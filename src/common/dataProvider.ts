@@ -53,18 +53,18 @@ export const dataProvider = (
     //since the soul api requires comma separated filters, remove the quotes and curly braces from the filter
     const filter = JSON.stringify(params.filter).replace(/[{} ""]/g, "");
 
-    //Add the _extend query to get many data by using a foreign key
-    let extend = undefined;
-    if (resource === "albums") {
-      extend = "ArtistId";
-    }
+    /**
+       NOTE: If you want to use the _extend query when you send a request to soul
+       you should pass the extend keys dynamically from the UI by using the "meta" attribute in the <List /> component
+       https://marmelab.com/react-admin/List.html#adding-meta-to-the-dataprovider-call
+    */
 
     const query = {
       _page: page,
       _limit: perPage,
       _ordering: ordering,
       _filters: filter ? filter : undefined,
-      _extend: extend,
+      _extend: params.meta?.extend, //Add the _extend query to get many data by using a foreign key
     };
 
     const url = `${apiUrl}/tables/${resource}/rows?${stringify(query)}`;
@@ -93,7 +93,7 @@ export const dataProvider = (
   getOne: (resource: string, params: any) => {
     const url = `${apiUrl}/tables/${resource}/rows/${params.id}`;
 
-    return axios.get(url).then((response) => {
+    return axios.get(url, { withCredentials: true }).then((response) => {
       let { data } = response.data;
       data = data[0];
 
@@ -110,7 +110,7 @@ export const dataProvider = (
   getMany: (resource: string, params: any) => {
     const url = `${apiUrl}/tables/${resource}/rows/${params.ids.toString()}`;
 
-    return axios.get(url).then((response) => {
+    return axios.get(url, { withCredentials: true }).then((response) => {
       const { data } = response.data;
 
       //manually add an id key
@@ -147,7 +147,7 @@ export const dataProvider = (
 
     const url = `${apiUrl}/tables/${resource}/rows?${stringify(query)}`;
 
-    return axios.get(url).then((response) => {
+    return axios.get(url, { withCredentials: true }).then((response) => {
       const { data } = response.data;
 
       //manually add an id key
@@ -171,9 +171,11 @@ export const dataProvider = (
   create: (resource: string, params: any) => {
     const url = `${apiUrl}/tables/${resource}/rows`;
 
-    return axios.post(url, { fields: params.data }).then((response) => {
-      return { data: { id: response.data.lastInsertRowId, ...params.data } };
-    });
+    return axios
+      .post(url, { fields: params.data }, { withCredentials: true })
+      .then((response) => {
+        return { data: { id: response.data.lastInsertRowId, ...params.data } };
+      });
   },
 
   update: (resource: string, params: any) => {
@@ -182,9 +184,11 @@ export const dataProvider = (
     // remove the id property
     const { id, ...editData } = params.data;
 
-    return axios.put(url, { fields: editData }).then((response) => {
-      return { data: { id: response.data.lastInsertRowId, ...params.data } };
-    });
+    return axios
+      .put(url, { fields: editData }, { withCredentials: true })
+      .then((response) => {
+        return { data: { id: response.data.lastInsertRowId, ...params.data } };
+      });
   },
 
   updateMany: (resource: string, params: any) => {
@@ -192,15 +196,17 @@ export const dataProvider = (
 
     // remove the id property
     const { id, ...editData } = params.data;
-    return axios.put(url, { fields: editData }).then(async (response) => {
-      return { data: params.ids };
-    });
+    return axios
+      .put(url, { fields: editData }, { withCredentials: true })
+      .then(async (response) => {
+        return { data: params.ids };
+      });
   },
 
   delete: (resource: string, params: any) => {
     const url = `${apiUrl}/tables/${resource}/rows/${params.id}`;
 
-    return axios.delete(url).then((response) => {
+    return axios.delete(url, { withCredentials: true }).then((response) => {
       return { data: params.id };
     });
   },
@@ -209,7 +215,7 @@ export const dataProvider = (
     const ids = params.ids.toString();
     const url = `${apiUrl}/tables/${resource}/rows/${ids}`;
 
-    return axios.delete(url).then((response) => {
+    return axios.delete(url, { withCredentials: true }).then((response) => {
       return { data: params.ids };
     });
   },

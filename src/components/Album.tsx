@@ -17,7 +17,7 @@ import {
 
 export function AlbumList() {
   return (
-    <List>
+    <List queryOptions={{ meta: { extend: "ArtistId" } }}>
       <Datagrid rowClick="show">
         <TextField source="id" />
         <TextField source="Title" />

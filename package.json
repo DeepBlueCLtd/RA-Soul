@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "npx soul-cli soul -d ./db/chinook.db -p $PORT -e /app/_extensions",
-    "dev:soul": "dotenv -- cross-var soul -d ./db/chinook.db -p %PORT% -e %EXTENSIONS% -c http://localhost:5173,http://127.0.0.1:5173 -a --atet=15S --rtet=20S --ts=ABCDEF --iuu=john --iup=AX34%V1!ct2",
+    "dev:soul": "dotenv -- cross-var soul -d ./db/chinook.db -p %PORT% -e %EXTENSIONS% -c http://localhost:5173,http://127.0.0.1:5173 -a --atet=10M --rtet=30M --ts=ABCDEF --iuu=john --iup=AX34%V1!ct2",
     "dev:client": "vite",
     "dev:soul-client": "dotenv -- cross-var soul -d ./db/chinook.db -p %PORT% -e %EXTENSIONS%",
     "build": "vite build && cp -R dist _extensions",
