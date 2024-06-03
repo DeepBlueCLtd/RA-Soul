@@ -1,5 +1,4 @@
-import { Admin, Resource, Menu, MenuItemLink, Layout } from "react-admin";
-import { Route, BrowserRouter } from "react-router-dom";
+import { Admin, Resource, Menu, MenuItemLink, Layout, LayoutProps, MenuProps } from "react-admin";
 
 import { dataProvider } from "./common/dataProvider";
 import { authProvider } from "./common/authProvider";
@@ -49,7 +48,7 @@ const pkDictionary = {
   albums: "AlbumId",
 };
 
-const MyMenu = (props) => (
+const MyMenu = (props: MenuProps) => (
   <Menu {...props}>
     <MenuItemLink to="/genres" primaryText="Generes" />
     <MenuItemLink to="/invoice_items" primaryText="Invoice Items" />
@@ -59,7 +58,7 @@ const MyMenu = (props) => (
   </Menu>
 );
 
-const MyLayout = (props) => <Layout {...props} menu={MyMenu} />;
+const MyLayout = (props: LayoutProps) => <Layout {...props} menu={MyMenu} />;
 
 function App() {
   return (
