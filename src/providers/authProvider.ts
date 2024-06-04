@@ -1,6 +1,5 @@
 import axios from "axios";
 import { AuthProvider } from "ra-core";
-import { addRefreshAuthToAuthProvider } from "react-admin";
 
 const refreshToken = async (apiUrl: string) => {
   const url = `${apiUrl}/auth/token/refresh`;
