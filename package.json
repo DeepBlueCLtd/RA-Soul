@@ -19,13 +19,12 @@
   ],
   "license": "EPL-2.0",
   "type": "module",
+  "module": "src/index.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "start": "npx soul-cli soul -d ./db/chinook.db -p $PORT -e /app/_extensions",
-    "dev:soul": "dotenv -- cross-var soul -d ./db/chinook.db -p %PORT% -e %EXTENSIONS% -c http://localhost:5173,http://127.0.0.1:5173 -a --atet=10M --rtet=30M --ts=ABCDEF --iuu=john --iup=AX34%V1!ct2",
-    "dev:client": "vite",
-    "dev:soul-client": "dotenv -- cross-var soul -d ./db/chinook.db -p %PORT% -e %EXTENSIONS%",
-    "build": "vite build && cp -R dist _extensions",
-    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0"
+    "start": "tsc --watch",
+    "build": "tsc",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "axios": "^1.2.0",

@@ -1,43 +1,6 @@
 import axios from "axios";
 import { stringify } from "query-string";
-import { DataProvider, AuthProvider } from "ra-core";
-
-/**
- * @example
- *
- * getList             => GET    http://my.api.url/tables/artists/rows?_page=1&_limit=10&_ordering=-Name&_filters=Name:summer&_extend=ArtistId
- * getOne              => GET    http://my.api.url/tables/artists/rows/1
- * getMany             => GET    http://my.api.url/tables/artists/rows/1,2,3,4
- * getManyReference    => GET    http://my.api.url/tables/artists/rows?_page=1&_limit=10&_ordering=-Name&_filters=Name:summer
- * create              => POST   http://my.api.url/tables/artists/rows/
- * update              => PUT    http://my.api.url/tables/artists/rows/1
- * updateMany          => PUT    http://my.api.url/tables/artists/rows/1,2,3
- * delete              => DELETE http://my.api.url/tables/artists/rows/1
- * deleteMany          => DELETE http://my.api.url/tables/artists/rows/1,2,3
- *
- *
- * @example
- *
- * import {Admin, Resource} from "react-admin"
- * import { dataProvider } from "./common/dataProvider";
- *
- * import {AlbumList} from "./components/Album"
- *
- * const primaryKeyDictionary = {
- *    albums: "AlbumId",
- *    tracks: "TrackId",
- *    genres: "GenreId",
- *    playlists: "PlayListId"
- * }
- *
- * function App() {
- *   return (
- *      <Admin dataProvider={dataProvider(primaryKeyDictionary, "http://my.api.url/tables/")}>
- *        <Resource name="albums" list={AlbumList}/>
- *      </Admin>
- *   )
- * }
- */
+import { DataProvider } from "ra-core";
 
 export const dataProvider = (
   pkDictionary: any,
