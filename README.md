@@ -2,7 +2,7 @@
 
 ### Description
 
-`RA-Soul-Provider` is a data provider that helps you connect React Admin with [`Soul`](https://github.com/thevahidal/soul), a REST server that uses SQLite. This provider exports a list of auth provider methods and data provider methods that you can use to connect your React Admin application with `Soul`.
+`RA-Soul` is a data provider that helps you connect React Admin with [`Soul`](https://github.com/thevahidal/soul), a REST server that uses SQLite. This provider exports a list of auth provider methods and data provider methods that you can use to connect your React Admin application with `Soul`.
 
 ### Provider Methods
 
@@ -37,7 +37,7 @@
 
 Clone the `Soul` repository and follow the instructions in the [README](https://github.com/thevahidal/soul/blob/main/README.md) to run the server.
 
-#### 2. Install the `ra-soul-provider`
+#### 2. Install the `ra-soul`
 
 ```
 npm i ra-soul-provider
