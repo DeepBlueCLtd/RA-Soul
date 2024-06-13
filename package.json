@@ -1,7 +1,23 @@
 {
-  "name": "client",
-  "private": true,
-  "version": "0.0.0",
+  "name": "ra-soul",
+  "private": false,
+  "author": {
+    "name": "Ian Mayo"
+  },
+  "contributors": [
+    {
+      "name": "Ian Mayo"
+    }
+    ],
+  "description": "Data and Auth Providers to allow Soul to be used as backend for React-Admin",
+  "version": "1.0.0",
+  "keywords": [
+    "react-admin",
+    "soul",
+    "data-provider",
+    "auth-provider"
+  ],
+  "license": "EPL-2.0",
   "type": "module",
   "module": "src/index.ts",
   "main": "src/index.ts",
@@ -18,7 +34,6 @@
     "react-admin": "^4.16.18",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
-    "soul-cli": "^0.7.8",
     "typescript": "^4.9.3"
   },
   "devDependencies": {
@@ -28,5 +43,9 @@
     "cross-var": "^1.1.0",
     "dotenv-cli": "^7.2.1",
     "vite": "^3.2.3"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/DeepBlueCLtd/RA-Soul/issues"
+  },
+  "homepage": "https://github.com/DeepBlueCLtd/RA-Soul"
 }
