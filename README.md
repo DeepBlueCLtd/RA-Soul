@@ -40,7 +40,7 @@ Clone the `Soul` repository and follow the instructions in the [README](https://
 #### 2. Install the `ra-soul-provider`
 
 ```
-npm i ra-soul-provider
+npm i ra-soul
 ```
 
 #### 3. Use the provider in your React Admin application
