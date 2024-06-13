@@ -49,9 +49,21 @@ npm i ra-soul
 import { Admin, Resource } from "react-admin";
 import { dataProvider, authProvider } from "ra-soul";
 
-import { AlbumList } from "./components/Album";
-import { GenreList } from "./components/Genre";
-import { ChangePassword } from "./components/auth/ChangePassword";
+import {
+  AlbumList,
+  AlbumShow,
+  AlbumEdit,
+  AlbumCreate,
+} from "./components/Album";
+
+import {
+  GenreList,
+  GenreShow,
+  GenreEdit,
+  GenreCreate,
+} from "./components/Genre";
+
+import { ChangePassword, Login } from "./components/auth/ChangePassword";
 
 /** React Admin expects an id field for each resource, but if your database doesn't have an id
  * field in each table, then you should map your primary key for each resource
