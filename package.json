@@ -10,7 +10,7 @@
     }
     ],
   "description": "Data and Auth Providers to allow Soul to be used as backend for React-Admin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "react-admin",
     "soul",
