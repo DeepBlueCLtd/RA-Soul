@@ -2,7 +2,7 @@
 
 ### Description
 
-`RA-Soul-Provider` is a data provider that helps you connect React Admin with [`Soul`](https://github.com/thevahidal/soul), a REST server that uses SQLite. This provider exports a list of auth provider methods and data provider methods that you can use to connect your React Admin application with `Soul`.
+`RA-Soul` is a data provider that helps you connect React Admin with [`Soul`](https://github.com/thevahidal/soul), a REST server that uses SQLite. This provider exports a list of auth provider methods and data provider methods that you can use to connect your React Admin application with `Soul`.
 
 ### Provider Methods
 
@@ -37,7 +37,7 @@
 
 Clone the `Soul` repository and follow the instructions in the [README](https://github.com/thevahidal/soul/blob/main/README.md) to run the server.
 
-#### 2. Install the `ra-soul-provider`
+#### 2. Install the `ra-soul` provider
 
 ```
 npm i ra-soul
@@ -47,11 +47,23 @@ npm i ra-soul
 
 ```js
 import { Admin, Resource } from "react-admin";
-import { dataProvider, authProvider } from "ra-soul-provider";
+import { dataProvider, authProvider } from "ra-soul";
 
-import { AlbumList } from "./components/Album";
-import { GenreList } from "./components/Genre";
-import { ChangePassword } from "./components/auth/ChangePassword";
+import {
+  AlbumList,
+  AlbumShow,
+  AlbumEdit,
+  AlbumCreate,
+} from "./components/Album";
+
+import {
+  GenreList,
+  GenreShow,
+  GenreEdit,
+  GenreCreate,
+} from "./components/Genre";
+
+import { ChangePassword, Login } from "./components/auth/ChangePassword";
 
 /** React Admin expects an id field for each resource, but if your database doesn't have an id
  * field in each table, then you should map your primary key for each resource
@@ -64,7 +76,7 @@ const primaryKeyDictionary = {
   playlists: "PlayListId",
 };
 
-const soulApiUrl = "http://soul.api.url/tables";
+const soulApiUrl = "http://soul.api.url/api";
 
 function App() {
   return (
@@ -94,3 +106,7 @@ function App() {
   );
 }
 ```
+
+## Running a Compiled React Admin App with Soul
+
+Soul provides a way to run a compiled version of your `React Admin` application using its `extensions` feature. To do this, build your `React Admin` app and place the compiled application inside a folder named `_extensions`. This setup will expose your compiled `React Admin` app with an endpoint accessible to the outside world. For more details about this feature, refer to [this page](https://github.com/thevahidal/soul/blob/main/docs/self-hosting.md).
