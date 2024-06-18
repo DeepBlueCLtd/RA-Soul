@@ -109,4 +109,4 @@ function App() {
 
 ## Running a Compiled React Admin App with Soul
 
-Soul provides a way to run a compiled version of your `React Admin` application using its `extensions` feature. To do this, build your `React Admin` app and place the compiled application inside a folder named `_extensions`. This setup will expose your compiled `React Admin` app with an endpoint accessible to the outside world. For more details about this feature, refer to [this page](https://github.com/thevahidal/soul/blob/main/docs/extensions-examples.md).
+Soul provides a way to run a compiled version of your `React Admin` application using its `extensions` feature. To do this, build your `React Admin` app and place the compiled application inside a folder named `_extensions`. This setup will expose your compiled `React Admin` app with an endpoint accessible to the outside world. For more details about this feature, refer to [this page](https://github.com/thevahidal/soul/blob/main/docs/self-hosting.md).
